@@ -1,2 +1,4 @@
 # URL-Shortner
-URL shortner build in go using Redis as DB
+URL Shortner build in go using Redis as DB
+Have used Fiber as HTTP package
+

@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  api:
+    build: api # Add a space and a dot to specify the build context
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    build: Db # Add a space and a dot to specify the build context
+    ports:
+      - "6379:6379"
+    volumes:
+      - .data:/Data
+
