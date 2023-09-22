@@ -1,11 +1,11 @@
 package routes
 
 import (
-	"URL-Shortner/api/database"
-	"URL-Shortner/api/helpers"
 	"github.com/asaskevich/govalidator"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
+	"github.com/nenite18/URL-Shortner/api/database"
+	"github.com/nenite18/URL-Shortner/api/helpers"
 	"os"
 	"strconv"
 	"time"

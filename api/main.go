@@ -1,11 +1,11 @@
 package main
 
 import (
-	"URL-Shortner/routes"
 	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/joho/godotenv"
+	"github.com/nenite18/URL-Shortner/api/routes"
 	"log"
 	"os"
 )

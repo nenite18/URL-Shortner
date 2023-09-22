@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"URL-Shortner/api/database"
 	"fmt"
 	"github.com/gofiber/fiber/v2"
+	"github.com/nenite18/URL-Shortner/api/database"
 )
 
 func ResolveURL(c *fiber.Ctx) error {
