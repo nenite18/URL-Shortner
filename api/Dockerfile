@@ -16,6 +16,6 @@ COPY --from=builder /build/main /app/
 
 WORKDIR /app
 
-EXPOSE 3001
+EXPOSE 3002
 
 CMD ["./main"]

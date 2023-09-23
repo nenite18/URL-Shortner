@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"github.com/nenite18/URL-Shortner/api/database"
 )
@@ -14,23 +13,24 @@ func ResolveURL(c *fiber.Ctx) error {
 
 	value, err := r.Get(database.Ctx, url).Result()
 
-	if err == nil {
-		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"error": "short url not found in database",
-		})
-	} else if err != nil {
+	if err != nil {
 		return c.Status(fiber.StatusServiceUnavailable).JSON(fiber.Map{
 			"error": " err in connecting to Database",
 		})
 	}
 
-	newval, err := r.Incr(database.Ctx, "counter").Result()
-	fmt.Println("upendra is here>>", newval)
+	if value == "" {
+		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+			"error": "short url not found in database",
+		})
+	}
 
-	rInr := database.CreateClient(1)
-	defer rInr.Close()
-
-	_ = rInr.Incr(database.Ctx, "counter")
+	//newVal , err := r.Incr(database.Ctx, "counter").Result()
+	//
+	//rInr := database.CreateClient(1)
+	//defer rInr.Close()
+	//
+	//_ = rInr.Incr(database.Ctx, "counter")
 
 	return c.Redirect(value, 301)
 }

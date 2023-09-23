@@ -4,7 +4,7 @@ services:
   api:
     build: api # Add a space and a dot to specify the build context
     ports:
-      - "3000:3000"
+      - "3002:3002"
     depends_on:
       - db
   db:
